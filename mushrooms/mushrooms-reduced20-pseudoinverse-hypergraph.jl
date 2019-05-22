@@ -17,7 +17,7 @@ rank = 20
 
 Random.seed!(123456)
 
-kernel = LowrankInvHypergraphLaplacianKernel(rank, true)
+kernel = LowRankInvHypergraphLaplacianKernel(rank, true)
 
 arch = GCNArchitecture(layerWidths, kernel,
     name="RGCN20-Pseudoinverse-Hypergraph")

@@ -17,7 +17,7 @@ rank = 20
 
 Random.seed!(123456)
 
-kernel = LowrankPolyHypergraphLaplacianKernel([[1.0, -1.0]],
+kernel = LowRankPolyHypergraphLaplacianKernel([[1.0, -1.0]],
     rank, :small, false)
 
 arch = GCNArchitecture(layerWidths, kernel,
