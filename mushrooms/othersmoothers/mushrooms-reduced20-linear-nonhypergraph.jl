@@ -4,7 +4,7 @@ using Random
 
 println("\nRUNNING EXPERIMENT SCRIPT: " * (@__FILE__))
 
-datasetFile = (@__DIR__) * "/mushrooms-dataset.jld"
+datasetFile = abspath(@__DIR__, "../mushrooms-dataset.jld")
 
 numTrainingIter = 1000
 numRuns = 100

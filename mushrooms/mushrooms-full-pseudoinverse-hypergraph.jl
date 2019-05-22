@@ -16,10 +16,10 @@ rm(resultsFileName, force=true)
 
 Random.seed!(123456)
 
-kernel = PolyHypergraphLaplacianKernel([[1.0, -1.0]])
+kernel = InvHypergraphLaplacianKernel()
 
 arch = GCNArchitecture(layerWidths, kernel,
-    name="GCN-Linear-Hypergraph")
+    name="GCN-Pseudoinverse-Hypergraph")
 
 exp = Experiment(datasetFile, arch, numTrainingIter)
 
