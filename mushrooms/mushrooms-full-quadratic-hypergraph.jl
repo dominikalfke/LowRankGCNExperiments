@@ -1,5 +1,6 @@
 
 using GCNModel
+using Random
 
 println("\nRUNNING EXPERIMENT SCRIPT: " * (@__FILE__))
 
