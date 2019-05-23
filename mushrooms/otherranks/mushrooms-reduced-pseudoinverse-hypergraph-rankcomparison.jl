@@ -14,7 +14,7 @@ resultsFileName = splitext(@__FILE__)[1] * "-results.jld"
 rm(resultsFileName, force=true)
 
 experiments = Experiment[]
-ranks = [10,12,15,25,30,40,50,70,100]
+ranks = [10,12,15,20,25,30,40,50,70,100]
 
 for r in ranks
 
@@ -28,7 +28,7 @@ for r in ranks
     exp = Experiment(datasetFile, arch, numTrainingIter)
     push!(experiments, exp)
 
-    addRuns(exp, numRuns, printInterval=10)
+    addRuns(exp, numRuns, printInterval=100)
 
     saveInJLD(exp, resultsFileName, "experiment-rank$r")
 end
