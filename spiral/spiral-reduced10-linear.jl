@@ -1,5 +1,6 @@
 
 using GCNModel
+using JLD
 using Random
 
 println("\nRUNNING EXPERIMENT SCRIPT: " * (@__FILE__))

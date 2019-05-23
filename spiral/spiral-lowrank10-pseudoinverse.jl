@@ -1,5 +1,6 @@
 
 using GCNModel
+using JLD
 using Random
 
 println("\nRUNNING EXPERIMENT SCRIPT: " * (@__FILE__))
@@ -8,7 +9,7 @@ datasetFile = (@__DIR__) * "/spiral-dataset.jld"
 
 numTrainingIter = 1000
 numRuns = 100
-layerWidths = [21, 8, 4]
+layerWidths = [3,4,5]
 
 resultsFileName = splitext(@__FILE__)[1] * "-results.jld"
 rm(resultsFileName, force=true)
