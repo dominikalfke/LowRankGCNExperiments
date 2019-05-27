@@ -1,6 +1,6 @@
 # LowRankGCNExperiments
 
-This repository contains the original Julia code used to produce the results in Alfke, Stoll, **Semi-Supervised Classification on Non-Sparse Graphs Using Low-Rank Graph Convolutional Networks** (2019). The code is based on our Julia module [``GCNModel``](https://github.com/dominikalfke/GCNModel).
+This repository contains the original Julia code used to produce the results in [Alfke, Stoll, **Semi-Supervised Classification on Non-Sparse Graphs Using Low-Rank Graph Convolutional Networks** (2019)](https://arxiv.org/abs/1905.10224). The code is based on our Julia module [``GCNModel``](https://github.com/dominikalfke/GCNModel).
 
 
 ## Dataset file format
