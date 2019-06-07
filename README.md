@@ -1,11 +1,12 @@
 
 # LowRankGCNExperiments
 
-This directory is part of the supplementary material to the submission **Semi-Supervised Classification on Non-SparseGraphs Using Low-Rank Graph Convolutional Networks** to NeurIPS 2019. It is a copy of a *github* repository and its purpose is to provide the Julia code used in the experiments in that paper.
+This repository contains the original Julia code used to produce the results in [Alfke, Stoll, **Semi-Supervised Classification on Non-Sparse Graphs Using Low-Rank Graph Convolutional Networks** (2019)](https://arxiv.org/abs/1905.10224). The code is based on our Julia module [``GCNModel``](https://github.com/dominikalfke/GCNModel).
 
-## Julia module
 
-All this code is based on our Julia module ``GCNModel``, which is made available in a different directory of the supplementary material. This also means that all dataset information is given in [JLD](https://github.com/JuliaIO/JLD.jl) files storing a single object named ``dataset`` of the ``Dataset`` data type from that module.
+## Dataset file format
+
+All datasets are given in [JLD](https://github.com/JuliaIO/JLD.jl) files storing a single object named ``dataset`` of the ``Dataset`` data type from the ``GCNModel`` module.
 
 ## General file naming strategy
 All names of experiment files follow the scheme ``dataset-architecture-filter[-laplacian].jl``, where
@@ -22,3 +23,13 @@ All names of experiment files follow the scheme ``dataset-architecture-filter[-l
 The ``spiral`` folder contains all experiment code for Table 1. The dataset is contained in ``spiral/spiral-dataset.jld``. The eigeninformation was only computed once and stored in ``spiral/spiral-eigenvalues.jld`` in the variables ``U`` and ``lambda``.
 
 If you would like to reproduce that data, ``spiral/datageneration`` contains the Matlab files. The function ``spiral/datageneration/generateSpiralDataWithLabels_relabeled.m`` is a slightly modified version of the file published at [http://www.codelooker.com/codec/3842uselibsvm1/generateSpiralDataWithLabels.m.html](http://www.codelooker.com/codec/3842uselibsvm1/generateSpiralDataWithLabels.m.html). The script ``spiral/datageneration/createSpiralData.m`` generates a ``.mat`` file containing the dataset matrices as well as the computed eigeninformation. To run it, you must download the code published at [https://www.tu-chemnitz.de/mathematik/wire/people/files_alfke/NFFT-Lanczos-Example-v1.tar.gz](https://www.tu-chemnitz.de/mathematik/wire/people/files_alfke/NFFT-Lanczos-Example-v1.tar.gz), follow the instructions there, and provide the function ``fastsumAdjacencyEigs.m`` on the Matlab path.
+
+
+## Hypergraph datasets
+
+The ``cars`` and ``mushrooms`` folders contain all experiment code for Table 2. The datasets are contained in ``cars/cars-dataset.jld`` and ``mushrooms/mushrooms-dataset.jl``, respectively.
+
+## Additional experiments from the appendix
+
+The ``mushrooms/otherranks`` and ``mushrooms/othersmoothers`` folders contain the code for Figure A4 and Table A4 from the appendix.
+
