@@ -17,10 +17,10 @@ rm(resultsFileName, force=true)
 
 Random.seed!(123456)
 
-kernel = PolyLaplacianKernel([[1.0, -1.0]], HypergraphSmoother(0.0, 1.0))
+kernel = PolyLaplacianKernel([[1.0, -2.0, 1.0]], nothing)
 
 arch = GCNArchitecture(layerWidths, kernel,
-    name="GCN-Linear")
+    name="GCN-Quadratic")
 
 exp = Experiment(datasetFile, arch, numTrainingIter)
 
